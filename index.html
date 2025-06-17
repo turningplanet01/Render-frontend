@@ -5,17 +5,21 @@
   </head>
   <body>
     <h1>Hello Render Header</h1>
-    <div id="app"></div>
-    <!-- <script>
+    <div id="app">Loading...</div> <!-- 添加加载状态 -->
 
-      document.getElementById('app').innerText = 'Hello Render';
-    </script> -->
     <script>
-
+      // 添加错误处理
       fetch('https://hello-render-rv1z.onrender.com/api/hello')
-        .then(res => res.json())
+        .then(res => {
+          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+          return res.json();
+        })
         .then(data => {
           document.getElementById('app').innerText = data.message;
+        })
+        .catch(error => {
+          console.error('Fetch error:', error);
+          document.getElementById('app').innerText = 'Failed to load message';
         });
     </script>
   </body>
