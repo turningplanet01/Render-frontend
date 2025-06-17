@@ -6,16 +6,17 @@
   <body>
     <h1>Hello Render Header</h1>
     <div id="app"></div>
-
-    <!-- document.getElementById('app').innerText = 'Hello Render'; -->
-
     <script>
+
+      document.getElementById('app').innerText = 'Hello Render';
+    </script>
+    <!-- <script>
 
       fetch('https://hello-render-rv1z.onrender.com/api/hello')
         .then(res => res.json())
         .then(data => {
           document.getElementById('app').innerText = data.message;
         });
-    </script>
+    </script> -->
   </body>
 </html>
