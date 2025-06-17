@@ -6,11 +6,7 @@
   <body>
     <div id="app"></div>
     <script>
-      fetch('https://hello-render-rv1z.onrender.com//api/hello')
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById('app').innerText = data.message;
-        });
+      document.getElementById('app').innerText = 'Hello Render';
     </script>
   </body>
 </html>
